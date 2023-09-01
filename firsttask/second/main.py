@@ -1,15 +1,13 @@
-years = ['Обезьяна', 'Петух', 'Собака', 'Свинья', 'Мышь', 'Бык', 'Тигр', 'Кролик', 'Дракон','Змея', 'Лошадь', 'Овца']
-
 while True:
-    year = input("Введите год: " )
-    if(year.isalpha() or len(year) == 0 or year < "0"):
+    str = input("Введите строку: ")
+    if(str.isdigit() or len(str) == 0):
         print("Ошибка")
         break
-    elif(year == "0"):
-        print("Конец")
-        break
     else:
-        newyear = int(year)
-        for i in range(0, 12):
-            if newyear % 12 == i:
-                print(years[i])
+        newstr = str.split(" ")
+        count = 0;
+        for i in range(len(newstr)):
+            if(len(newstr[i]) % 2 != 0):
+                count += 1
+    print(*[f'{x} - {str.count(x)}' for x in set(str) if x.isalpha()], sep='\n')
+    print(f'Количесвто нечетных слов: {count}')
