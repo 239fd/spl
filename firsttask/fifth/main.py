@@ -12,150 +12,167 @@ def is_not_text(str):
         return False
 def menu():
     print(
-        "******************\nЮвелирный магазин\n1.Описание\n2.Цена\n3.Количество\n4.Всю информацию\n5.Покупка\n6.До свидания\n******************")
+        "******************\nJewelry\n1.Description\n2.Price\n3.Quantity\n4.All information\n5.Purchase\n6.Bye\n******************")
 def second_menu():
     print(
-        "******************\nЮвелирный магазин\n1.Кольцо\n2.Колье\n3.Браслет\n4.Серьги\n5.Цепь\n6.Назад\n******************")
-list_ring = ["Золото", "1000", "50"]
-list_necklace = ["Золото", "2000", "40"]
-list_wirstband = ["Серебро", "500", "10"]
-list_earrings = ["Золото", "750", "70"]
-list_chains = ["Платина", "5000", "5"]
+        "******************\nJewelry\n1.Ring\n2.Necklace\n3.Wirstband\n4.Earrings\n5.Chain\n6.Back\n******************")
+list_ring = ["Gold", "1000", "50"]
+list_necklace = ["Gold", "2000", "40"]
+list_wirstband = ["Silver", "500", "10"]
+list_earrings = ["Gold", "750", "70"]
+list_chains = ["Platinum", "5000", "5"]
 dictionary = {
-        "Кольцо": list_ring,
-        "Колье": list_necklace,
-        "Браслет": list_wirstband,
-        "Серьги": list_earrings,
-        "Цепь": list_chains
+        "Ring": list_ring,
+        "Necklace": list_necklace,
+        "Wirstband": list_wirstband,
+        "Earrings": list_earrings,
+        "Chain": list_chains
 }
+list_cart = []
 while True:
     menu()
-    choice = input("Выберите пункт меню: ")
+    choice = input("Choose: ")
     while not is_int(choice) or int(choice) > 6 or int(choice) < 1:
-        choice = input("Некорректный ввод, попробуйте снова: ")
+        choice = input("Invalid input, try again: ")
     match choice:
         case "1":
             second_menu()
-            number = input("Выберите пункт меню: ")
+            number = input("Choose: ")
             while not is_int(number) or int(number) > 6 or int(number) < 1:
-                number = input("Некорректный ввод, попробуйте снова: ")
+                number = input("Invalid input, try again: ")
             match number:
                 case "1":
-                    print(f"Материал изделия: {list_ring[0]}")
+                    print(f"Product material: {list_ring[0]}")
                 case "2":
-                    print(f"Материал изделия: {list_necklace[0]}")
+                    print(f"Product material: {list_necklace[0]}")
                 case "3":
-                    print(f"Материал изделия: {list_wirstband[0]}")
+                    print(f"Product material: {list_wirstband[0]}")
                 case "4":
-                    print(f"Материал изделия: {list_earrings[0]}")
+                    print(f"Product material: {list_earrings[0]}")
                 case "5":
-                    print(f"Материал изделия: {list_chains[0]}")
+                    print(f"Product material: {list_chains[0]}")
                 case "6":
-                    print("Возращаемся...")
+                    print("Back...")
         case "2":
             second_menu()
-            number = input("Выберите пункт меню: ")
+            number = input("Choose: ")
             while not is_int(number) or int(number) > 6 or int(number) < 1:
-                number = input("Некорректный ввод, попробуйте снова: ")
+                number = input("Invalid input, try again: ")
             match number:
                 case "1":
-                    print(f"Цена изделия: {list_ring[1]}")
+                    print(f"Product price: {list_ring[1]}")
                 case "2":
-                    print(f"Цена изделия: {list_necklace[1]}")
+                    print(f"Product price: {list_necklace[1]}")
                 case "3":
-                    print(f"Цена изделия: {list_wirstband[1]}")
+                    print(f"Product price: {list_wirstband[1]}")
                 case "4":
-                    print(f"Цена изделия: {list_earrings[1]}")
+                    print(f"Product price: {list_earrings[1]}")
                 case "5":
-                    print(f"Цена изделия: {list_chains[1]}")
+                    print(f"Product price: {list_chains[1]}")
                 case "6":
-                    print("Возращаемся...")
+                    print("Back...")
         case "3":
             second_menu()
-            number = input("Выберите пункт меню: ")
+            number = input("Choose: ")
             while not is_int(number) or int(number) > 6 or int(number) < 1:
-                number = input("Некорректный ввод, попробуйте снова: ")
+                number = input("Invalid input, try again: ")
             match number:
                 case "1":
-                    print(f"Количество изделия: {list_ring[2]} шт.")
+                    print(f"{list_ring[2]} pieces of rings")
                 case "2":
-                    print(f"Количество изделия: {list_necklace[2]} шт.")
+                    print(f"{list_necklace[2]} pieces of rings")
                 case "3":
-                    print(f"Количество изделия: {list_wirstband[2]} шт.")
+                    print(f"{list_wirstband[2]} pieces of wirstbands")
                 case "4":
-                    print(f"Количество изделия: {list_earrings[2]} шт.")
+                    print(f"{list_earrings[2]} pieces of earrings")
                 case "5":
-                    print(f"Количество изделия: {list_chains[2]} шт.")
+                    print(f"{list_chains[2]} pieces of chains")
                 case "6":
-                    print("Возращаемся...")
+                    print("Back...")
         case "4":
             second_menu()
-            number = input("Выберите пункт меню: ")
+            number = input("Choose: ")
             while not is_int(number) or int(number) > 6 or int(number) < 1:
-                number = input("Некорректный ввод, попробуйте снова: ")
+                number = input("Invalid input, try again: ")
             match number:
                 case "1":
-                    print(f"Материал изделия: {list_ring[0]}, цена изделия: {list_ring[1]}, количетсво изделия: {list_ring[2]} шт.")
+                    print(f"Product material: {list_ring[0]}, product price: {list_ring[1]}, {list_ring[2]} pieces of rings")
                 case "2":
-                    print(f"Материал изделия: {list_necklace[0]}, цена изделия: {list_necklace[1]}, количетсво изделия: {list_necklace[2]} шт.")
+                    print(f"Product material: {list_necklace[0]}, product price: {list_necklace[1]}, {list_necklace[2]} pieces of rings")
                 case "3":
-                    print(f"Материал изделия: {list_wirstband[0]}, цена изделия: {list_wirstband[1]}, количетсво изделия: {list_wirstband[2]} шт.")
+                    print(f"Product material: {list_wirstband[0]}, product price: {list_wirstband[1]}, {list_wirstband[2]} pieces of rings")
                 case "4":
-                    print(f"Материал изделия: {list_earrings[0]}, цена изделия: {list_earrings[1]}, количетсво изделия: {list_earrings[2]} шт.")
+                    print(f"Product material: {list_earrings[0]}, product price: {list_earrings[1]}, {list_earrings[2]} pieces of rings")
                 case "5":
-                    print(f"Материал изделия: {list_chains[0]}, цена изделия: {list_chains[1]}, количетсво изделия: {list_chains[2]} шт.")
+                    print(f"Product material: {list_chains[0]}, product price: {list_chains[1]}, {list_chains[2]} pieces of rings")
                 case "6":
-                    print("Возращаемся...")
+                    print("Back...")
         case "5":
-            cost = 0
             second_menu()
-            name = input("Введите название пункта меню: ")
-            while is_not_text(name) or len(name) == 0 or not name.isalpha() or not name == "Кольцо" or not name == "Колье" or not name == "Браслет" or not name == "Серьги" or not name == "Цепь":
-                name = input("Некорректный ввод, попробуйте снова: ")
+            name = input("Choose: ")
+            set = 'Ring Necklace Wirstband Earrings Chain'
+            while name not in set:
+                name = input("Invalid input, try again: ")
             match name:
-                case "Кольцо":
-                    amount = input("Введите количество: ")
+                case "Ring":
+                    cost = 0
+                    amount = input("Input quantity: ")
                     while not is_int(amount) or int(amount) > int(list_ring[2]):
-                        amount = input("Некорректный ввод, попробуйте снова: ")
+                        amount = input("Invalid input, try again: ")
                     result = str(int(list_ring[2]) - int(amount))
                     list_ring.insert(2,result)
                     cost += int(amount) * int(list_ring[1])
-                    print(f"В вашу корзину добавлены кольца на стоимость: {cost}")
-                case "Колье":
-                    amount = input("Введите количество: ")
-                    while not is_int(amount) or amount > int(list_necklace[2]):
-                        amount = input("Некорректный ввод, попробуйте снова: ")
+                    list_cart += "Ring", amount, cost
+                case "Necklace":
+                    cost = 0
+                    amount = input("Input quantity: ")
+                    while not is_int(amount) or int(amount) > int(list_necklace[2]):
+                        amount = input("Invalid input, try again: ")
                     result = str(int(list_necklace[2]) - int(amount))
                     list_necklace.insert(2, result)
                     cost += int(amount) * int(list_necklace[1])
-                    print(f"В вашу корзину добавлено колье на стоимость: {cost}")
-                case "Браслет":
-                    amount = input("Введите количество: ")
-                    while not is_int(amount) or amount > int(list_wirstband[2]):
-                        amount = input("Некорректный ввод, попробуйте снова: ")
+                    list_cart += "Necklace", amount, cost
+                case "Wirstband":
+                    cost = 0
+                    amount = input("Input quantity: ")
+                    while not is_int(amount) or int(amount) > int(list_wirstband[2]):
+                        amount = input("Invalid input, try again: ")
                     result = str(int(list_wirstband[2]) - int(amount))
                     list_wirstband.insert(2, result)
                     cost += int(amount) * int(list_wirstband[1])
-                    print(f"В вашу корзину добавлены браслеты на стоимость: {cost}")
-                case "Серьги":
-                    amount = input("Введите количество: ")
-                    while not is_int(amount) or amount > int(list_earrings[2]):
-                        amount = input("Некорректный ввод, попробуйте снова: ")
+                    list_cart += "Wirstband", amount, cost
+                case "Earrings":
+                    cost = 0
+                    amount = input("Input quantity: ")
+                    while not is_int(amount) or int(amount) > int(list_earrings[2]):
+                        amount = input("Invalid input, try again: ")
                     result = str(int(list_earrings[2]) - int(amount))
                     list_earrings.insert(2, result)
                     cost += int(amount) * int(list_earrings[1])
-                    print(f"В вашу корзину добавлены серьги на стоимость: {cost}")
-                case "Цепь":
-                    amount = input("Введите количество: ")
-                    while not is_int(amount) or amount > int(list_chains[2]):
-                        amount = input("Некорректный ввод, попробуйте снова: ")
+                    list_cart += "Earrings", amount, cost
+                case "Chain":
+                    cost = 0
+                    amount = input("Input quantity: ")
+                    while not is_int(amount) or int(amount) > int(list_chains[2]):
+                        amount = input("Invalid input, try again: ")
                     result = str(int(list_chains[2]) - int(amount))
                     list_chains.insert(2, result)
                     cost += int(amount) * int(list_chains[1])
-                    print(f"В вашу корзину добавлены цепи на стоимость: {cost}")
+                    list_cart += "Chain", amount, cost
                 case "n":
-                    print("Выходим...")
+                    if(len(list_cart) == 0):
+                        print("Your cart is empty")
+                        break
+                    else:
+                        total = 0;
+                        print("Your cart:")
+                        for i in range(0,len(list_cart),3):
+                            print(f"Product: {list_cart[i]}, amount: {list_cart[i+1]}, price: {list_cart[i+2]}")
+                        for i in range(2,len(list_cart), 3):
+                            total+=list_cart[i]
+                        print(f"Total price {total}")
+                        print("Back...")
                     break
         case "6":
-            print("До свидания")
+            print("Bye")
             break
