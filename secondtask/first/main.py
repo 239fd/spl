@@ -1,6 +1,4 @@
 import math
-
-
 def is_int(str):
     try:
         int(str)
@@ -8,9 +6,9 @@ def is_int(str):
     except ValueError:
         return False
 
-
 def solve(a, b, c):
     D = (b ** 2) - 4 * a * c
+
     if D > 0:
         x1 = (-b + math.sqrt(D)) / (2 * a)
         x2 = (-b - math.sqrt(D)) / (2 * a)
@@ -23,8 +21,9 @@ def solve(a, b, c):
         str = "Нет действительных корней"
         return str, ""
 
+
 a = input("Введите значение a: ")
-while not is_int(a):
+while not is_int(a) or a == 0:
     a = input("Неверно, введите значение a: ")
 b = input("Введите значение b: ")
 while not is_int(b):
