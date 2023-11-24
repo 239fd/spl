@@ -1,42 +1,25 @@
 import numpy as np
-import pandas as pd
 from matplotlib import pyplot as plt
 
-#1
-df = pd.read_csv('test.csv')
+t_values = np.arange(2, 3, 0.03)
+s_values = []
 
-#2
-df = df.sample(n=1000)
+for t in t_values:
+    s = np.log(abs(1.3 + t)) * np.exp(t)
+    s_values.append(s)
 
-#3
-print(f"\n\tData Omissions"
-      f"\n{df.isnull().sum()}")
 
-#4
-plt.figure(figsize=(12,12))
-plt.subplot(1,2,1)
-df['Square'].plot(kind='box', logy=True)
-plt.title('Boxplot with Logarithmic Scale')
+s_max = max(s_values)
+s_min = min(s_values)
+s_avg = np.mean(s_values)
+s_len = len(s_values)
 
-plt.subplot(1, 2, 2)
-df['Square'].plot(kind='hist', bins=30, logy=True)
-plt.title('Histogram with Logarithmic Scale')
+plt.plot(t_values,s_values)
+
+line_avg = [s_avg] * len(t_values)
+plt.plot(t_values, line_avg)
+
+plt.xlabel("t")
+plt.ylabel("s")
 
 plt.show()
-
-#5
-numeric_columns = ['Square','LifeSquare','KitchenSquare','Healthcare_1']
-df[numeric_columns] = df[numeric_columns].fillna(df[numeric_columns].mean())
-df = df[(df['Square'] > 20) & (df['Square'] < 200)]
-
-#6
-print(f"\n\tNumber of Apartments by Number of Rooms"
-          f"\n{df['Rooms'].value_counts()}")
-
-#7
-pivot_table = df.pivot_table(index='DistrictId', columns='Rooms', values='Id', aggfunc='count')
-print(f"\n\tSummury Table"
-      f"\n{pivot_table}")
-
-#8
-df.to_csv('surname.csv',index=False)
